@@ -45,7 +45,7 @@ function App() {
           </div>
         </div>
 
-        {data.name != undefined && (
+        {data.name !== undefined && (
           <div className="bottom">
             <div className="feels">
               {data.main ? (
