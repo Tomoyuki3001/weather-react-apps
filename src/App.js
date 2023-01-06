@@ -4,14 +4,12 @@ import React, { useState } from "react";
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
-  // const API_KEY = process.env.REACT_APP_API_KEY;
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=5efa27fba902792fc106c92d65695eed`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_KEY}`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
       axios.get(url).then((response) => {
         setData(response.data);
-        console.log(response.data);
       });
       setLocation("");
     }
