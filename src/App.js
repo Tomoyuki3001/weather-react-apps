@@ -44,25 +44,22 @@ function App() {
             {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
-
-        {data.name !== undefined && (
-          <div className="bottom">
-            <div className="feels">
-              {data.main ? (
-                <p className="bold">{Math.floor(data.main.temp - 273.15)}℃</p>
-              ) : null}
-              <p>Feels Like</p>
-            </div>
-            <div className="hunidity">
-              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
-              <p>Humidity</p>
-            </div>
-            <div className="wind">
-              {data.main ? <p className="bold">{data.wind.speed} MPH</p> : null}
-              <p>Winds</p>
-            </div>
+        <div className="bottom">
+          <div className="feels">
+            {data.main ? (
+              <p className="bold">{Math.floor(data.main.temp - 273.15)}℃</p>
+            ) : null}
+            <p>Feels Like</p>
           </div>
-        )}
+          <div className="hunidity">
+            {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
+            <p>Humidity</p>
+          </div>
+          <div className="wind">
+            {data.main ? <p className="bold">{data.wind.speed} MPH</p> : null}
+            <p>Winds</p>
+          </div>
+        </div>
       </div>
     </div>
   );
